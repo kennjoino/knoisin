@@ -17,22 +17,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 
-    background-color: #f5f5f5;
-    color: #222;
-}
-
-
-/* =========================
-   Links
-   ========================= */
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    background-color: #111315;
+    color: #e6e6e6;
 }
 
 
@@ -43,18 +29,22 @@ a:hover {
 header {
     max-width: 900px;
     margin: 0 auto 50px;
+
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+
     font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .subtitle {
     margin-top: 5px;
-    color: #666;
-    font-size: 1.1rem;
+
+    color: #888;
 }
 
 
@@ -68,14 +58,16 @@ section {
 
     padding: 25px;
 
-    background-color: white;
-    border-radius: 10px;
+    background-color: #191c1f;
+    border: 1px solid #2b2f33;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
 }
 
 section h2 {
     margin-top: 0;
+
+    color: #f0f0f0;
 }
 
 
@@ -84,20 +76,46 @@ section h2 {
    ========================= */
 
 .project {
-    padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #2b2f33;
 }
 
 .project:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
     border-bottom: none;
 }
 
 .project h3 {
-    margin: 0 0 5px;
+    margin-bottom: 5px;
+
+    color: #f0f0f0;
 }
 
 .project p {
-    margin: 0 0 8px;
+    margin-top: 0;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   Links
+   ========================= */
+
+a {
+    color: #4da3ff;
+
+    text-decoration: none;
+}
+
+a:hover {
+    color: #80bdff;
+
+    text-decoration: underline;
 }
 
 
@@ -110,7 +128,8 @@ footer {
     margin: 40px auto 0;
 
     text-align: center;
-    color: #777;
+
+    color: #666;
 }
 
 
