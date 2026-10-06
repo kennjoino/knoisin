@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <link rel="stylesheet" href="../style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adjustable Muon Detector - Kenneth Noisin</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>adjustable muon detector</h1>
+
+        <p class="subtitle">
+            Particle detection // High-voltage electronics // Embedded systems
+        </p>
+    </header>
+
+
+    <section>
+
+        <img
+            src="images/muon-main.jpg"
+            alt="Adjustable muon detector"
+            class="project-image"
+        >
+
+        <h2>overview</h2>
+
+        <p>
+            An experimental cosmic-ray muon detector designed to detect
+            high-energy particles passing through the detector using
+            two Geiger–Müller tubes.
+        </p>
+
+        <p>
+            The project combines high-voltage power electronics,
+            pulse conditioning, digital logic, mechanical adjustment,
+            and embedded data acquisition into a single system.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>objective</h2>
+
+        <p>
+            The goal of the project is to investigate the detection of
+            cosmic-ray muons using Geiger–Müller tubes and to build the
+            supporting electronics required to reliably identify
+            particle events.
+        </p>
+
+        <p>
+            Using two detectors allows events occurring in both tubes
+            to be compared, helping distinguish potential particle
+            events from individual detector noise or background events.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>detector system</h2>
+
+        <p>
+            The detector uses two SBM-20 Geiger–Müller tubes positioned
+            with an adjustable separation. The mechanical arrangement
+            allows the distance between the tubes to be changed for
+            experimental measurements.
+        </p>
+
+        <img
+            src="images/muon-detector.jpg"
+            alt="Geiger-Müller tubes used in the muon detector"
+            class="project-image"
+        >
+
+        <p>
+            The detector electronics must provide a sufficiently high
+            voltage for the Geiger–Müller tubes while also converting
+            the resulting detector pulses into clean digital signals.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>high-voltage supply</h2>
+
+        <p>
+            The Geiger–Müller tubes require a high operating voltage.
+            A dedicated high-voltage supply was therefore designed as
+            part of the project.
+        </p>
+
+        <img
+            src="images/muon-hv.jpg"
+            alt="High-voltage supply for the muon detector"
+            class="project-image"
+        >
+
+        <p>
+            The supply uses a switching stage followed by a
+            Cockcroft–Walton voltage multiplier to generate the
+            high voltage required by the detector tubes.
+        </p>
+
+        <p>
+            Designing this section involved investigating switching
+            frequency, duty cycle, transformer behaviour, diode
+            selection, voltage multiplication, loading, and insulation.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>signal processing</h2>
+
+        <p>
+            The pulses produced by the Geiger–Müller tubes are relatively
+            short and require conditioning before they can be processed
+            reliably by a microcontroller.
+        </p>
+
+        <p>
+            The planned signal-processing chain consists of several
+            digital logic stages:
+        </p>
+
+        <ul>
+            <li>74HCT14 Schmitt-trigger inverter</li>
+            <li>74HC123 monostable multivibrator</li>
+            <li>74HC08 AND logic</li>
+            <li>Arduino Nano for counting and data processing</li>
+        </ul>
+
+        <img
+            src="images/muon-circuit.jpg"
+            alt="Muon detector signal processing circuit"
+            class="project-image"
+        >
+
+    </section>
+
+
+    <section>
+
+        <h2>coincidence detection</h2>
+
+        <p>
+            A key part of the detector is identifying events that are
+            registered by both Geiger–Müller tubes within a defined
+            time window.
+        </p>
+
+        <p>
+            The conditioned detector pulses can therefore be combined
+            using digital logic to create a coincidence signal.
+            This signal can then be measured by the Arduino.
+        </p>
+
+        <p>
+            The coincidence approach provides a way of reducing the
+            influence of single-tube background events and makes the
+            system more suitable for investigating cosmic-ray events.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>adjustable geometry</h2>
+
+        <p>
+            The distance between the two detector tubes is mechanically
+            adjustable. A servo-based mechanism is being developed to
+            control the detector separation.
+        </p>
+
+        <p>
+            Buttons allow the user to change the detector position,
+            making it possible to investigate how the measured event
+            rate changes with detector geometry.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>embedded system</h2>
+
+        <p>
+            An Arduino Nano is used as the control and measurement
+            system. It processes the detector signals and provides
+            the user with a simple interface for observing measurements.
+        </p>
+
+        <p>
+            The system is intended to display detector counts and
+            coincidence events on an LCD while also controlling the
+            adjustable detector mechanism.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>engineering challenges</h2>
+
+        <ul>
+            <li>
+                Generating and regulating the high voltage required
+                by the Geiger–Müller tubes.
+            </li>
+
+            <li>
+                Producing reliable detector pulses from the tube output.
+            </li>
+
+            <li>
+                Designing digital logic capable of detecting
+                coincidence events.
+            </li>
+
+            <li>
+                Preventing unwanted noise and false detections.
+            </li>
+
+            <li>
+                Integrating high-voltage electronics with
+                low-voltage digital electronics.
+            </li>
+
+            <li>
+                Designing a mechanically adjustable detector assembly.
+            </li>
+        </ul>
+
+    </section>
+
+
+    <section>
+
+        <h2>results</h2>
+
+        <p>
+            The project is being developed as an experimental particle
+            detector, with the electronics and detector geometry being
+            tested individually before integration into the complete
+            system.
+        </p>
+
+        <p>
+            The final system will be evaluated by measuring detector
+            counts and coincidence events and comparing the results
+            under different detector configurations.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>github</h2>
+
+        <p>
+            Source code, circuit diagrams, measurements, development
+            notes, and additional documentation will be available in
+            the project's GitHub repository.
+        </p>
+
+        <a href="https://github.com/kennjoino">
+            view repository →
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            <a href="../index.html">
+                ← back to home
+            </a>
+        </p>
+
+        <p>© 2026 Kenneth Noisin</p>
+
+    </footer>
+
+</body>
+
+</html>
